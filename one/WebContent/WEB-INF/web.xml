@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>one</display-name>
+  <context-param>
+    <param-name>databaseURL</param-name>
+    <param-value>jdbc:mysql://localhost/ebookshop</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>zxcvbnm0!</param-value>
+  </context-param>
+ <servlet>
+        <servlet-name>EntryServlet</servlet-name>
+        <servlet-class>two.EntryServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>EntryServlet</servlet-name>
+        <url-pattern>/start</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>QueryServlet</servlet-name>
+        <servlet-class>two.QueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+     <servlet-name>CartServlet</servlet-name>
+     <servlet-class>two.CartServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>two.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+  <servlet-name>OrderServlet</servlet-name>
+  <servlet-class>two.OrderServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+  		<servlet-name>OrderServlet</servlet-name>
+  		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>two.LoginServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+  		<servlet-name>LoginServlet</servlet-name>
+  		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+    
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>start</welcome-file>
+    </welcome-file-list>
+   
+</web-app>
